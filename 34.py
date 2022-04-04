@@ -5,11 +5,12 @@
 # than $150, the message “Balance below $150” should also be displayed. See Fig. 3.13.
 
 
-
-balance=float(input("Enter current balance:"))
-withdrawal=float(input("Enter amount of withdrawal:"))
-amount=balance-withdrawal
-if(amount<0):
-    print("Withdrawal denied")
+balance = float(input("Enter current balance: "))
+amountOfWithdrawal = float(input("Enter amount of withdrawal: "))
+if (balance >= amountOfWithdrawal):
+    balance -= amountOfWithdrawal
+    print("The new balance is ${0:,.2f}.".format(balance))
+    if balance < 150:
+        print("Balance below $150", "Warning")
 else:
-    print("The new balance is $",amount)    
+    print("Withdrawal denied.")    
